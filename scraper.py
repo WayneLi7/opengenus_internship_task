@@ -7,6 +7,7 @@ def get_same_domain_links(url):
 		response = urllib2.urlopen(url)
 	except urllib2.HTTPError, e:
     		print(e.getcode())
+    		return
 	html = response.read()
 	soup = BeautifulSoup(html, 'html.parser')
 	##find all <a> tag
